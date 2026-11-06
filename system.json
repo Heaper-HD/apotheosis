@@ -1,51 +1,53 @@
 {
-  "id": "apotheosis",
-  "title": "Apotheosis",
-  "description": "The Apotheosis system for FoundryVTT!",
-  "authors": [
-    {
-      "name": "Asacolips",
-      "discord": "asacolips"
-    },
-    {
-      "name": "Lee Talman",
-      "discord": ".pizzaWizard"
-    }
-  ],
-  "url": "Replace this with a link to your public repository",
-  "license": "LICENSE.txt",
-  "readme": "README.md",
-  "bugs": "Replace this with a link to file issues or tickets",
-  "changelog": "CHANGELOG.md",
-  "media": [
-    {
-      "type": "setup",
-      "url": "systems/apotheosis/assets/anvil-impact.png",
-      "thumbnail": "systems/apotheosis/assets/anvil-impact.png"
-    }
-  ],
-  "version": "0.1.0",
-  "compatibility": {
-    "minimum": 14,
-    "verified": "14.370"
-  },
-  "esmodules": ["module/apotheosis.mjs"],
-  "styles": ["css/apotheosis.css"],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
-  "packs": [],
-  "packFolders": [],
-  "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
-  "background": "systems/apotheosis/assets/anvil-impact.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power"
+	"id": "apotheosis",
+	"title": "Apotheosis",
+	"description": "Spiritual energy, rebellion, and the price of fighting the world",
+	"authors": [
+		{
+			"name": "Heaper",
+			"url": "https://github.com/Heaper-HD"
+		}
+	],
+	"url": "https://github.com/Heaper-HD/apotheosis",
+	"license": "LICENSE.txt",
+	"readme": "README.md",
+	"bugs": "https://github.com/Heaper-HD/apotheosis/issues/",
+	"changelog": "CHANGELOG.md",
+	"media": [
+		{
+			"type": "setup",
+			"url": "systems/apotheosis/assets/anvil-impact.png",
+			"thumbnail": "systems/apotheosis/assets/anvil-impact.png"
+		}
+	],
+	"version": "0.1.0",
+	"compatibility": {
+		"minimum": 14,
+		"verified": "14.370"
+	},
+	"esmodules": ["module/apotheosis.mjs"],
+	"styles": ["css/apotheosis.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"packs": [],
+	"packFolders": [],
+	"socket": false,
+	"manifest": "https://raw.githubusercontent.com/Heaper-HD/apotheosis/main/system.json",
+	"download": "This must link to a .zip file of the current version",
+	"background": "systems/apotheosis/assets/anvil-impact.png",
+	"grid": {
+		"distance": 5,
+		"units": "ft"
+	},
+	"primaryTokenAttribute": "health",
+	"secondaryTokenAttribute": "power",
+	"documentTypes": {
+		"Actor": { "character": {}, "npc": {} },
+		"Item": { "item": {}, "feature": {}, "spell": {} }
+	}
 }

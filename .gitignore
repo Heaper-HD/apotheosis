@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+
+# Compendium pack lock files (LevelDB)
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old
+
+# Release zips
+*.zip

@@ -44,10 +44,8 @@
 		"distance": 5,
 		"units": "ft"
 	},
-	"primaryTokenAttribute": "health",
-	"secondaryTokenAttribute": "power",
+	"primaryTokenAttribute": "",
+	"secondaryTokenAttribute": "",
 	"documentTypes": {
-		"Actor": { "character": {}, "npc": {} },
-		"Item": { "item": {}, "feature": {}, "spell": {} }
 	}
 }

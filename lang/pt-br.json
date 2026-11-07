@@ -1,0 +1,31 @@
+{
+	"TYPES": {
+		"Actor": {
+			"character": "Personagem",
+			"npc": "NPC"
+		}
+	},
+	"APOTHEOSIS": {
+		"Attribute": {
+			"Body": "Corpo",
+			"Agility": "Agilidade",
+			"Wits": "Astúcia",
+			"Spirit": "Espirito"
+		},
+		"Action": {
+			"Skirmish": "Confrontar",
+			"Wreck": "Destruir",
+			"Hunt": "Caçar",
+			"Prowl": "Rondar",
+			"Finesse": "Manobrar",
+			"Study": "Investigar",
+			"Survey": "Examinar",
+			"Tinker": "Remendar",
+			"Channel": "Canalizar",
+			"Attune": "Sintonizar",
+			"Command": "Comandar",
+			"Consort": "Socializar",
+			"Sway": "Persuadir"
+		}
+	}
+}

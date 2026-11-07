@@ -32,6 +32,11 @@
 			"lang": "en",
 			"name": "English",
 			"path": "lang/en.json"
+		},
+		{
+			"lang": "pt-br",
+			"name": "Português",
+			"path": "lang/pt-br.json"
 		}
 	],
 	"packs": [],
@@ -44,8 +49,7 @@
 		"distance": 5,
 		"units": "ft"
 	},
-	"primaryTokenAttribute": "",
-	"secondaryTokenAttribute": "",
 	"documentTypes": {
+		"Actor": { "character": {}, "npc": {} }
 	}
 }

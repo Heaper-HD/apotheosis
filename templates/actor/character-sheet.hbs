@@ -1,0 +1,18 @@
+<section class="apotheosis-sheet">
+	<h1>{{actor.name}}</h1>
+
+	<div class="attributes">
+		{{#each attributes as |attribute|}}
+			<div class="attribute">
+				<label>{{localize attribute.label}}</label>
+				<input type="number" name="system.attributes.{{attribute.key}}.value" value="{{attribute.value}}">
+				/
+				<input type="number" name="system.attributes.{{attribute.key}}.max" value="{{attribute.max}}">
+			</div>
+			{{#each attribute.actions as |action|}}
+				<label>{{localize action.label}}</label>
+				<input type="number" name="system.actions.{{action.key}}" value="{{action.value}}">
+			{{/each}}
+		{{/each}}
+	</div>
+</section>

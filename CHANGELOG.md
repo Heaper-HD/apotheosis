@@ -15,3 +15,4 @@ All notable changes to this project are documented here.
 
 ### Removed
 - template.json and placeholder library.
+- Boilerplate example content: D&D data models, sheets, templates, and styles.

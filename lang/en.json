@@ -1,3 +1,31 @@
 {
-
+	"TYPES": {
+		"Actor": {
+			"character": "Character",
+			"npc": "NPC"
+		}
+	},
+		"APOTHEOSIS": {
+		"Attribute": {
+			"Body": "Body",
+			"Agility": "Agility",
+			"Wits": "Wits",
+			"Spirit": "Spirit"
+		},
+		"Action": {
+			"Skirmish": "Skirmish",
+			"Wreck": "Wreck",
+			"Hunt": "Hunt",
+			"Prowl": "Prowl",
+			"Finesse": "Finesse",
+			"Study": "Study",
+			"Survey": "Survey",
+			"Tinker": "Tinker",
+			"Channel": "Channel",
+			"Attune": "Attune",
+			"Command": "Command",
+			"Consort": "Consort",
+			"Sway": "Sway"
+		}
+	}
 }

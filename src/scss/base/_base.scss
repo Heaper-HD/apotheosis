@@ -1,0 +1,57 @@
+// Base: the window itself, headings, and form controls.
+// Everything is scoped under .apotheosis.sheet so it never touches
+// other Foundry windows.
+
+.apotheosis.sheet {
+  .window-content {
+    padding: 0;
+    background: var(--ap-paper);
+    color: var(--ap-ink);
+    font-family: var(--ap-font-body);
+    container-type: inline-size; // lets the layout react to the window's width
+  }
+
+  // The part's root element: fills the window and scrolls.
+  .apotheosis-sheet {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    border: none;
+    font-family: var(--ap-font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  // Number inputs: small, centered, monospaced so digits line up.
+  input[type="number"] {
+    width: 3.5em;
+    height: 26px;
+    flex: none;
+    text-align: center;
+    font-family: var(--ap-font-data);
+    font-weight: 700;
+  }
+
+  select {
+    height: 26px;
+  }
+
+  input,
+  select,
+  textarea {
+    background: var(--ap-paper);
+    color: var(--ap-ink);
+    border: 1px solid var(--ap-line);
+    border-radius: 3px;
+
+    &:focus {
+      border-color: var(--ap-spirit);
+      outline: none;
+      box-shadow: 0 0 0 1px var(--ap-spirit);
+    }
+  }
+}

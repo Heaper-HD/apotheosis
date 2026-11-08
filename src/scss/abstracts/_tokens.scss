@@ -1,0 +1,52 @@
+// Design tokens: every color and font the sheet uses lives here.
+// Change a value here and the whole sheet follows.
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap');
+
+@mixin light-colors {
+  --ap-paper: #eef0ee;
+  --ap-surface: #f8f9f7;
+  --ap-ink: #1a1e24;
+  --ap-muted: #5e6670;
+  --ap-line: #c9ced2;
+  --ap-spirit: #2b6c8a;
+  --ap-energy: #b4441a;
+  --ap-danger: #a3262b;
+}
+
+@mixin dark-colors {
+  --ap-paper: #12161b;
+  --ap-surface: #1a1f26;
+  --ap-ink: #e4e8ec;
+  --ap-muted: #93a0ac;
+  --ap-line: #323a44;
+  --ap-spirit: #6fb3d2;
+  --ap-energy: #e8794a;
+  --ap-danger: #e0656a;
+}
+
+.apotheosis.sheet {
+	@include light-colors;
+
+  // Fonts
+  --ap-font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --ap-font-body: "Public Sans", "Signika", sans-serif;
+  --ap-font-data: "JetBrains Mono", ui-monospace, monospace;
+
+  // Spacing
+  --ap-gap: 12px;
+  --ap-pad: 10px 12px;
+}
+
+// Dark interface, when the sheet has no theme of its own.
+.theme-dark .apotheosis.sheet {
+  @include dark-colors;
+}
+
+.apotheosis.sheet.theme-dark {
+  @include dark-colors;
+}
+
+.apotheosis.sheet.theme-light {
+  @include light-colors;
+}

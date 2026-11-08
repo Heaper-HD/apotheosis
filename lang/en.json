@@ -41,6 +41,32 @@
 			"Large": "Large",
 			"Massive": "Massive",
 			"Beyond": "Beyond"
+		},
+		"Sheet": {
+			"Character": "Character Sheet"
+		},
+		"Power": {
+			"Understanding": "Power Understanding"
+		},
+		"Scars": {
+			"Spiritual": "Burnout Scars"
+		},
+		"Load": {
+			"Label": "Load",
+			"Light": "Light",
+			"Normal": "Normal",
+			"Heavy": "Heavy"
+		},
+		"XP": {
+			"Label": "Experience",
+			"Focus": "Focus"
+		},
+		"Background": {
+			"Label": "Background",
+			"Heritage": "Heritage",
+			"Drive": "Drive",
+			"Ally": "Ally",
+			"Rival": "Rival"
 		}
 	}
 }

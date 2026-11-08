@@ -41,6 +41,32 @@
 			"Large": "Grande",
 			"Massive": "Gigante",
 			"Beyond": "Além"
+		},
+		"Sheet": {
+			"Character": "Ficha de Personagem"
+		},
+		"Power": {
+			"Understanding": "Compreensão do Poder"
+		},
+		"Scars": {
+			"Spiritual": "Cicatrizes de Esgotamento"
+		},
+		"Load": {
+			"Label": "Carga",
+			"Light": "Leve",
+			"Normal": "Normal",
+			"Heavy": "Pesada"
+		},
+		"XP": {
+			"Label": "Experiência",
+			"Focus": "Foco"
+		},
+		"Background": {
+			"Label": "Histórico",
+			"Heritage": "Origem",
+			"Drive": "Motivação",
+			"Ally": "Aliado",
+			"Rival": "Rival"
 		}
 	}
 }

@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Css
+css/*.map
+
 # Logs
 npm-debug.log*
 *.log

@@ -17,10 +17,10 @@ export default class ApotheosisCharacter extends ApotheosisActorBase {
 			load: new StringField({ required:true, blank: false, choices: ["light", "normal", "heavy"], initial: "normal" }),
 			burnoutScars: new NumberField({ required: true, integer: true, min: 0, max: 4, initial: 0 }),
 			background: new SchemaField({
-				heritage: new StringField({ required: false, blank: true }),
-				drive: new StringField({ required: false, blank: true }),
-				ally: new StringField({ required: false, blank: true }),
-				rival: new StringField({ required: false, blank: true }),
+				heritage: new StringField({ required: false, blank: true, initial: "" }),
+				drive: new StringField({ required: false, blank: true, initial: "" }),
+				ally: new StringField({ required: false, blank: true, initial: "" }),
+				rival: new StringField({ required: false, blank: true, initial: "" }),
 			}),
 			awakenings: new ArrayField(new SchemaField({
 				title: new StringField({ required: true, blank: true }),

@@ -1,20 +1,27 @@
 <section class="apotheosis-sheet">
 	<h1>{{actor.name}}</h1>
 
+	{{!-- Attributes and actions --}}
 	<div class="attributes">
 		{{#each attributes as |attribute|}}
 			<div class="attribute">
 				<label>{{localize attribute.label}}</label>
-				<input type="number" name="system.attributes.{{attribute.key}}.value" value="{{attribute.value}}">
+
+				<input type="number" name="system.attributes.{{attribute.key}}.value" value="{{attribute.value}}" min="0">
 				/
-				<input type="number" name="system.attributes.{{attribute.key}}.max" value="{{attribute.max}}">
+				<input type="number" name="system.attributes.{{attribute.key}}.max" value="{{attribute.max}}" min="0">
+
+				<div class="actions">
+					{{#each attribute.actions as |action|}}
+						<label>{{localize action.label}}</label>
+						<input type="number" name="system.actions.{{action.key}}" value="{{action.value}}" min="0" max="4">
+					{{/each}}
+				</div>
 			</div>
-			{{#each attribute.actions as |action|}}
-				<label>{{localize action.label}}</label>
-				<input type="number" name="system.actions.{{action.key}}" value="{{action.value}}">
-			{{/each}}
 		{{/each}}
 	</div>
+
+	{{!-- Energy --}}
 	<div class="energy">
 		<h2>{{localize "APOTHEOSIS.Energy.Label"}}</h2>
 
@@ -41,6 +48,81 @@
 				{{selectOptions masteryLevels selected=system.energy.mastery localize=true}}
 			</select>
 		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Scars.Spiritual"}}
+			<input type="number" name="system.burnoutScars" value="{{system.burnoutScars}}" min="0" max="4">
+		</label>
+	</div>
+
+	{{!-- Power --}}
+	<div class="power">
+		<h2>{{localize "APOTHEOSIS.Power.Understanding"}}</h2>
+		<textarea name="system.powerUnderstanding">{{system.powerUnderstanding}}</textarea>
+	</div>
+
+	{{!-- Load --}}
+	<div class="load">
+		<h2>{{localize "APOTHEOSIS.Load.Label"}}</h2>
+		<select name="system.load">
+			{{selectOptions loadLevels selected=system.load localize=true}}
+		</select>
+	</div>
+
+	{{!-- Experience --}}
+	<div class="xp">
+		<h2>{{localize "APOTHEOSIS.XP.Label"}}</h2>
+
+		<label>
+			{{localize "APOTHEOSIS.Attribute.Body"}}
+			<input type="number" name="system.xp.body" value="{{system.xp.body}}" min="0">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Attribute.Agility"}}
+			<input type="number" name="system.xp.agility" value="{{system.xp.agility}}" min="0">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Attribute.Wits"}}
+			<input type="number" name="system.xp.wits" value="{{system.xp.wits}}" min="0">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Attribute.Spirit"}}
+			<input type="number" name="system.xp.spirit" value="{{system.xp.spirit}}" min="0">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.XP.Focus"}}
+			<input type="number" name="system.xp.focus" value="{{system.xp.focus}}" min="0">
+		</label>
+	</div>
+
+	{{!-- Background --}}
+	<div class="background">
+		<h2>{{localize "APOTHEOSIS.Background.Label"}}</h2>
+
+		<label>
+			{{localize "APOTHEOSIS.Background.Heritage"}}
+			<input type="text" name="system.background.heritage" value="{{system.background.heritage}}">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Background.Drive"}}
+			<input type="text" name="system.background.drive" value="{{system.background.drive}}">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Background.Ally"}}
+			<input type="text" name="system.background.ally" value="{{system.background.ally}}">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Background.Rival"}}
+			<input type="text" name="system.background.rival" value="{{system.background.rival}}">
+		</label>
+
 	</div>
 
 </section>

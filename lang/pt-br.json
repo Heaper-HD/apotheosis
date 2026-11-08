@@ -26,6 +26,21 @@
 			"Command": "Comandar",
 			"Consort": "Socializar",
 			"Sway": "Persuadir"
+		},
+		"Energy": {
+			"Label": "Energia Espiritual",
+			"Current": "Atual",
+			"Capacity": "Capacidade",
+			"Efficiency": "Eficiência",
+			"Mastery": "Proeficiencia"
+		},
+		"Mastery": {
+			"None": "Nanhuma",
+			"Small": "Pequena",
+			"Medium": "Média",
+			"Large": "Grande",
+			"Massive": "Gigante",
+			"Beyond": "Além"
 		}
 	}
 }

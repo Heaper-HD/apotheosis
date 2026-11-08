@@ -47,4 +47,8 @@ export default class ApotheosisActorBase extends foundry.abstract.TypeDataModel 
 			powerUnderstanding: new HTMLField({})
 		}
 	}
+
+	prepareDerivedData() {
+		this.energy.multiplier = CONFIG.APOTHEOSIS.efficiencyMultipliers[this.energy.efficiency];
+	}
 }

@@ -15,4 +15,32 @@
 			{{/each}}
 		{{/each}}
 	</div>
+	<div class="energy">
+		<h2>{{localize "APOTHEOSIS.Energy.Label"}}</h2>
+
+		<label>
+			{{localize "APOTHEOSIS.Energy.Current"}}
+			<input type="number" name="system.energy.value" value="{{system.energy.value}}">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Energy.Capacity"}}
+			<input type="number" name="system.energy.max" value="{{system.energy.max}}">
+		</label>
+
+		<label>
+			{{localize "APOTHEOSIS.Energy.Efficiency"}}
+			<input type="number" name="system.energy.efficiency" value="{{system.energy.efficiency}}">
+		</label>
+
+		<span class="multiplier">x{{system.energy.multiplier}}</span>
+
+		<label>
+			{{localize "APOTHEOSIS.Energy.Mastery"}}
+			<select name="system.energy.mastery">
+				{{selectOptions masteryLevels selected=system.energy.mastery localize=true}}
+			</select>
+		</label>
+	</div>
+
 </section>

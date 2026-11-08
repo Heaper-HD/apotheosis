@@ -1,12 +1,16 @@
 export default class ApotheosisCharacterSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
 	static DEFAULT_OPTIONS = {
 		classes: ["apotheosis", "sheet", "actor", "character"],
-		position: { width: 600, height: 700 },
-		form: { submitOnChange: true }
+		position: { width: 900, height: 1000 },
+		form: { submitOnChange: true },
+		window: { resizeable: true}
 	}
 
 	static PARTS = {
-		sheet: { template: "systems/apotheosis/templates/actor/character-sheet.hbs" }
+		sheet: {
+			template: "systems/apotheosis/templates/actor/character-sheet.hbs",
+			scrollable: [""]
+		}
 	}
 
 	async _prepareContext(options) {
@@ -29,6 +33,8 @@ export default class ApotheosisCharacterSheet extends foundry.applications.api.H
 					value: this.actor.system.actions[actionKey]
 				}))
 		}));
+
+		context.masteryLevels = CONFIG.APOTHEOSIS.masteryLevels;
 
 		return context;
 	}

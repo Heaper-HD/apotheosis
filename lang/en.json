@@ -5,7 +5,7 @@
 			"npc": "NPC"
 		}
 	},
-		"APOTHEOSIS": {
+	"APOTHEOSIS": {
 		"Attribute": {
 			"Body": "Body",
 			"Agility": "Agility",
@@ -26,6 +26,21 @@
 			"Command": "Command",
 			"Consort": "Consort",
 			"Sway": "Sway"
+		},
+		"Energy": {
+			"Label": "Spiritual Energy",
+			"Current": "Current",
+			"Capacity": "Capacity",
+			"Efficiency": "Efficiency",
+			"Mastery": "Mastery"
+		},
+		"Mastery": {
+			"None": "None",
+			"Small": "Small",
+			"Medium": "Medium",
+			"Large": "Large",
+			"Massive": "Massive",
+			"Beyond": "Beyond"
 		}
 	}
 }

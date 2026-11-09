@@ -1,3 +1,4 @@
-export { default as ApotheosisActorBase } from './actor-base.mjs';
-export { default as ApotheosisCharacter } from './actor-character.mjs';
-export { default as ApotheosisNPC } from './actor-npc.mjs';
+export { default as ApotheosisCivilian } from './civilian.mjs';
+export { default as ApotheosisCombatant } from './combatant.mjs';
+export { default as ApotheosisMajor } from './major.mjs';
+export { default as ApotheosisPlayer } from './player.mjs';

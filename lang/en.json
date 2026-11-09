@@ -1,72 +1,10 @@
 {
 	"TYPES": {
 		"Actor": {
-			"character": "Character",
-			"npc": "NPC"
-		}
-	},
-	"APOTHEOSIS": {
-		"Attribute": {
-			"Body": "Body",
-			"Agility": "Agility",
-			"Wits": "Wits",
-			"Spirit": "Spirit"
-		},
-		"Action": {
-			"Skirmish": "Skirmish",
-			"Wreck": "Wreck",
-			"Hunt": "Hunt",
-			"Prowl": "Prowl",
-			"Finesse": "Finesse",
-			"Study": "Study",
-			"Survey": "Survey",
-			"Tinker": "Tinker",
-			"Channel": "Channel",
-			"Attune": "Attune",
-			"Command": "Command",
-			"Consort": "Consort",
-			"Sway": "Sway"
-		},
-		"Energy": {
-			"Label": "Spiritual Energy",
-			"Current": "Current",
-			"Capacity": "Capacity",
-			"Efficiency": "Efficiency",
-			"Mastery": "Mastery"
-		},
-		"Mastery": {
-			"None": "None",
-			"Small": "Small",
-			"Medium": "Medium",
-			"Large": "Large",
-			"Massive": "Massive",
-			"Beyond": "Beyond"
-		},
-		"Sheet": {
-			"Character": "Character Sheet"
-		},
-		"Power": {
-			"Understanding": "Power Understanding"
-		},
-		"Scars": {
-			"Spiritual": "Burnout Scars"
-		},
-		"Load": {
-			"Label": "Load",
-			"Light": "Light",
-			"Normal": "Normal",
-			"Heavy": "Heavy"
-		},
-		"XP": {
-			"Label": "Experience",
-			"Focus": "Focus"
-		},
-		"Background": {
-			"Label": "Background",
-			"Heritage": "Heritage",
-			"Drive": "Drive",
-			"Ally": "Ally",
-			"Rival": "Rival"
+			"civilian": "Civilian",
+			"combatant": "Combatant",
+			"major": "Major",
+			"player": "Player"
 		}
 	}
 }

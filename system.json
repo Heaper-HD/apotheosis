@@ -50,6 +50,19 @@
 		"units": "ft"
 	},
 	"documentTypes": {
-		"Actor": { "character": {}, "npc": {} }
+		"Actor": {
+			"civilian": {
+				"htmlFields": ["notes"]
+			},
+			"combatant": {
+				"htmlFields": ["notes"]
+			},
+			"major": {
+				"htmlFields": ["notes", "identity.biography", "gmNotes", "awakenings.*.description"]
+			},
+			"player": {
+				"htmlFields": ["notes", "identity.biography", "awakenings.*.description"]
+			}
+		}
 	}
 }

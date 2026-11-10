@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap");
+.apotheosis input,
+.apotheosis select,
+.apotheosis textarea {
+  background: var(--ap-paper);
+  color: var(--ap-ink);
+  border: 1px solid var(--ap-line);
+  border-radius: 3px;
+}
+.apotheosis input:focus,
+.apotheosis select:focus,
+.apotheosis textarea:focus {
+  border-color: var(--ap-spirit);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--ap-spirit);
+}
+.apotheosis input[type=number] {
+  width: 4em;
+  text-align: center;
+  font-family: var(--ap-font-data);
+}
+.apotheosis textarea {
+  width: 100%;
+  resize: vertical;
+  font-family: var(--ap-font-body);
+  line-height: 1.5;
+}
+
+.apotheosis {
+  --ap-paper: #eef0ee;
+  --ap-surface: #f8f9f7;
+  --ap-ink: #1a1e24;
+  --ap-muted: #5e6670;
+  --ap-line: #c9ced2;
+  --ap-spirit: #2b6c8a;
+  --ap-energy: #b4441a;
+  --ap-danger: #a3262b;
+  --ap-font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --ap-font-body: "Public Sans", "Signika", sans-serif;
+  --ap-font-data: "JetBrains Mono", ui-monospace, monospace;
+  --ap-gap: 12px;
+}
+
+.theme-dark .apotheosis {
+  --ap-paper: #12161b;
+  --ap-surface: #1a1f26;
+  --ap-ink: #e4e8ec;
+  --ap-muted: #93a0ac;
+  --ap-line: #323a44;
+  --ap-spirit: #6fb3d2;
+  --ap-energy: #e8794a;
+  --ap-danger: #e0656a;
+}
+
+.apotheosis.theme-dark {
+  --ap-paper: #12161b;
+  --ap-surface: #1a1f26;
+  --ap-ink: #e4e8ec;
+  --ap-muted: #93a0ac;
+  --ap-line: #323a44;
+  --ap-spirit: #6fb3d2;
+  --ap-energy: #e8794a;
+  --ap-danger: #e0656a;
+}
+
+.apotheosis.theme-light {
+  --ap-paper: #eef0ee;
+  --ap-surface: #f8f9f7;
+  --ap-ink: #1a1e24;
+  --ap-muted: #5e6670;
+  --ap-line: #c9ced2;
+  --ap-spirit: #2b6c8a;
+  --ap-energy: #b4441a;
+  --ap-danger: #a3262b;
+}
+
+.apotheosis .window-content {
+  background: var(--ap-paper);
+  color: var(--ap-ink);
+  font-family: var(--ap-font-body);
+}
+.apotheosis h1, .apotheosis h2, .apotheosis h3 {
+  margin: 0;
+  border: none;
+  font-family: var(--ap-font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.apotheosis h2 {
+  font-size: 22px;
+}
+.apotheosis h3 {
+  font-size: 16px;
+}
+
+.apotheosis .vital {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.apotheosis .vital .vital-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: var(--ap-font-data);
+}
+.apotheosis .vital .bar {
+  height: 8px;
+  background: var(--ap-paper);
+  border: 1px solid var(--ap-line);
+}
+.apotheosis .vital .fill {
+  height: 100%;
+  background: var(--ap-ink);
+}
+.apotheosis .vital.energy .fill {
+  background: var(--ap-energy);
+}
+.apotheosis .vital.broken .vital-label {
+  color: var(--ap-danger);
+}
+.apotheosis .vital.broken .bar {
+  border-color: var(--ap-danger);
+}
+
+.apotheosis nav.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 var(--ap-gap);
+  border-bottom: 1px solid var(--ap-line);
+}
+.apotheosis nav.tabs .item {
+  padding: 8px 10px;
+  font-family: var(--ap-font-display);
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--ap-muted);
+  border-bottom: 2px solid transparent;
+}
+.apotheosis nav.tabs .item:hover {
+  color: var(--ap-ink);
+}
+.apotheosis nav.tabs .item.active {
+  color: var(--ap-ink);
+  border-bottom-color: var(--ap-ink);
+}
+
+.apotheosis.sidebar-sheet .window-content {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: "sidebar tabs" "sidebar content";
+  padding: 0;
+  overflow: hidden;
+}
+.apotheosis.sidebar-sheet [data-application-part=sidebar] {
+  grid-area: sidebar;
+}
+.apotheosis.sidebar-sheet [data-application-part=tabs] {
+  grid-area: tabs;
+}
+.apotheosis.sidebar-sheet .tab {
+  grid-area: content;
+}
+.apotheosis.sidebar-sheet .tab {
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--ap-gap);
+}
+.apotheosis.sidebar-sheet .sidebar {
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ap-gap);
+  padding: var(--ap-gap);
+  background: var(--ap-surface);
+  border-right: 1px solid var(--ap-line);
+}
+.apotheosis.sidebar-sheet .portrait {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--ap-line);
+  cursor: pointer;
+}
+.apotheosis.sidebar-sheet .name {
+  height: auto;
+  font-family: var(--ap-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.apotheosis.sidebar-sheet .vitals {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.apotheosis.sidebar-sheet .stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 8px;
+  font-size: 12px;
+  color: var(--ap-muted);
+}
+.apotheosis.sidebar-sheet .stats strong {
+  color: var(--ap-ink);
+}
+.apotheosis.sidebar-sheet .notes textarea {
+  min-height: 10em;
+}
+
+.apotheosis.sheet.player .biography .fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px var(--ap-gap);
+  margin-bottom: var(--ap-gap);
+}
+.apotheosis.sheet.player .biography .fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ap-muted);
+}
+.apotheosis.sheet.player .biography .fields input, .apotheosis.sheet.player .biography .fields select {
+  width: 100%;
+}
+.apotheosis.sheet.player .biography textarea {
+  min-height: 14em;
+}
+
+/*# sourceMappingURL=apotheosis.css.map */

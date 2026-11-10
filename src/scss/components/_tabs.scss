@@ -1,0 +1,22 @@
+.apotheosis nav.tabs {
+	display: flex;
+	gap: 4px;
+	padding: 0 var(--ap-gap);
+	border-bottom: 1px solid var(--ap-line);
+
+	.item {
+		padding: 8px 10px;
+		font-family: var(--ap-font-display);
+		font-size: 15px;
+		text-transform: uppercase;
+		color: var(--ap-muted);
+		border-bottom: 2px solid transparent;
+
+		&:hover { color: var(--ap-ink); }
+
+		&.active {
+			color: var(--ap-ink);
+			border-bottom-color: var(--ap-ink);
+		}
+	}
+}

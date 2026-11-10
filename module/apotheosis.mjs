@@ -1,5 +1,6 @@
 import { APOTHEOSIS } from './helpers/config.mjs';
 import { ApotheosisCivilian, ApotheosisCombatant, ApotheosisMajor, ApotheosisPlayer, ApotheosisWeapon, ApotheosisArmor, ApotheosisGear, ApotheosisInjury } from './data/_module.mjs';
+import { ApotheosisPlayerSheet } from './sheets/_module.mjs'
 import { registerSettings } from './settings.mjs';
 
 Hooks.once('init', function () {
@@ -8,8 +9,9 @@ Hooks.once('init', function () {
 	CONFIG.APOTHEOSIS = APOTHEOSIS;
 
 	registerActorDataModels();
-
 	registerItemDataModels();
+
+	registerSheets();
 });
 
 function registerActorDataModels() {
@@ -32,4 +34,11 @@ function registerItemDataModels() {
 	CONFIG.Item.dataModels.armor = ApotheosisArmor;
 	CONFIG.Item.dataModels.gear = ApotheosisGear;
 	CONFIG.Item.dataModels.injury = ApotheosisInjury;
+}
+
+function registerSheets() {
+	foundry.applications.apps.DocumentSheetConfig.registerSheet(
+		foundry.documents.Actor, "apotheosis", ApotheosisPlayerSheet,
+		{ types: ["player"], makeDefault: true, label: "APOTHEOSIS.Sheet.Player" }
+	);
 }

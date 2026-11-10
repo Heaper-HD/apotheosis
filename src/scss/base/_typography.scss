@@ -1,0 +1,19 @@
+.apotheosis {
+	.window-content {
+		background: var(--ap-paper);
+		color: var(--ap-ink);
+		font-family: var(--ap-font-body);
+	}
+
+	h1, h2, h3 {
+		margin: 0;
+		border: none;
+		font-family: var(--ap-font-display);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	h2 { font-size: 22px; }
+	h3 { font-size: 16px; }
+}

@@ -1,0 +1,29 @@
+.apotheosis {
+	input,
+	select,
+	textarea {
+		background: var(--ap-paper);
+		color: var(--ap-ink);
+		border: 1px solid var(--ap-line);
+		border-radius: 3px;
+
+		&:focus {
+			border-color: var(--ap-spirit);
+			outline: none;
+			box-shadow: 0 0 0 1px var(--ap-spirit);
+		}
+	}
+
+	input[type="number"] {
+		width: 4em;
+		text-align: center;
+		font-family: var(--ap-font-data);
+	}
+
+	textarea {
+		width: 100%;
+		resize: vertical;
+		font-family: var(--ap-font-body);
+		line-height: 1.5;
+	}
+}

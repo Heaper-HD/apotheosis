@@ -1,0 +1,22 @@
+@mixin field-stacked {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--ap-muted);
+}
+
+@mixin field-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	font-size: 13px;
+}
+
+@mixin scroll-column {
+	min-height: 0;
+	overflow-y: auto;
+}

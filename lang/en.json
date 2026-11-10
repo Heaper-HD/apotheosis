@@ -1,38 +1,4 @@
 {
-	"APOTHEOSIS": {
-		"Warning": {
-			"ActionDecrease": "Only the GM can lower an action."
-		},
-		"Actor": {
-			"FIELDS": {
-				"affiliation": { "label": "Affiliation" },
-				"appearance": { "label": "Appearance" },
-				"notes": { "label": "Notes" },
-				"attributes": {
-					"body": {
-						"value": { "label": "Body" },
-						"max": { "label": "Max Body" }
-					}
-				},
-				"energy": {
-					"value": { "label": "Energy" },
-					"max": { "label": "Capacity" },
-					"efficiency": { "label": "Efficiency", "hint": "How little energy leaks when using a power." }
-				},
-				"xp": {
-					"body": { "label": "Body XP" }
-				},
-				"heat": { "label": "Heat" }
-			}
-		},
-		"Item": {
-			"FIELDS": {
-				"description": { "label": "Description" },
-				"tier": { "label": "Tier" },
-				"load": { "label": "Load" }
-			}
-		}
-	},
 	"TYPES": {
 		"Actor": {
 			"civilian": "Civilian",
@@ -46,6 +12,435 @@
 			"armor": "Armor",
 			"gear": "Gear",
 			"injury": "Injury"
+		}
+	},
+	"APOTHEOSIS": {
+		"Sheet": {
+			"Player": "Player Sheet"
+		},
+		"Tabs": {
+			"main": "Main",
+			"powers": "Powers",
+			"inventory": "Inventory",
+			"progress": "Progress",
+			"biography": "Biography"
+		},
+		"Sidebar": {
+			"Armor": "Armor",
+			"Cards": "Cards"
+		},
+		"Warning": {
+			"ActionDecrease": "Only the GM can lower an action."
+		},
+		"Attribute": {
+			"Body": "Body",
+			"Agility": "Agility",
+			"Wits": "Wits",
+			"Spirit": "Spirit"
+		},
+		"Action": {
+			"Skirmish": "Skirmish",
+			"Wreck": "Wreck",
+			"Endure": "Endure",
+			"Hunt": "Hunt",
+			"Prowl": "Prowl",
+			"Finesse": "Finesse",
+			"Study": "Study",
+			"Survey": "Survey",
+			"Tinker": "Tinker",
+			"Mend": "Mend",
+			"Sway": "Sway",
+			"Channel": "Channel",
+			"Attune": "Attune",
+			"Command": "Command",
+			"Consort": "Consort"
+		},
+		"Mastery": {
+			"None": "None",
+			"Small": "Small",
+			"Medium": "Medium",
+			"Large": "Large",
+			"Massive": "Massive",
+			"Beyond": "Beyond"
+		},
+		"Load": {
+			"Light": "Light",
+			"Normal": "Normal",
+			"Heavy": "Heavy"
+		},
+		"Focus": {
+			"Investigation": "Investigation",
+			"Frontline": "Front line",
+			"Planning": "Planning"
+		},
+		"Attitude": {
+			"Hostile": "Hostile",
+			"Wary": "Wary",
+			"Neutral": "Neutral",
+			"Sympathetic": "Sympathetic",
+			"Ally": "Ally"
+		},
+		"Setting": {
+			"healthPerDie": {
+				"name": "Health per die",
+				"hint": "How much attribute health gives one die."
+			},
+			"agilityPerCard": {
+				"name": "Agility per initiative card",
+				"hint": "How many current Agility dice give one extra initiative card."
+			},
+			"xpCostMultiplier": {
+				"name": "XP cost multiplier",
+				"hint": "Buying an action dot costs the new rating times this value."
+			},
+			"burnoutThreshold": {
+				"name": "Burnout threshold",
+				"hint": "A spiritual injury roll at or above this value kills the character."
+			},
+			"loadLight": {
+				"name": "Light load limit",
+				"hint": "Maximum load carried at light load."
+			},
+			"loadNormal": {
+				"name": "Normal load limit",
+				"hint": "Maximum load carried at normal load."
+			},
+			"LoadHeavy": {
+				"name": "Heavy load limit",
+				"hint": "Maximum load carried at heavy load."
+			}
+		},
+		"Actor": {
+			"FIELDS": {
+				"affiliation": {
+					"label": "Affiliation"
+				},
+				"appearance": {
+					"label": "Appearance"
+				},
+				"notes": {
+					"label": "Notes"
+				},
+				"attributes": {
+					"body": {
+						"value": {
+							"label": "Body"
+						},
+						"max": {
+							"label": "Max Body"
+						}
+					},
+					"agility": {
+						"value": {
+							"label": "Agility"
+						},
+						"max": {
+							"label": "Max Agility"
+						}
+					},
+					"wits": {
+						"value": {
+							"label": "Wits"
+						},
+						"max": {
+							"label": "Max Wits"
+						}
+					},
+					"spirit": {
+						"value": {
+							"label": "Spirit"
+						}
+					}
+				},
+				"actions": {
+					"skirmish": {
+						"label": "Skirmish"
+					},
+					"wreck": {
+						"label": "Wreck"
+					},
+					"endure": {
+						"label": "Endure"
+					},
+					"hunt": {
+						"label": "Hunt"
+					},
+					"prowl": {
+						"label": "Prowl"
+					},
+					"finesse": {
+						"label": "Finesse"
+					},
+					"study": {
+						"label": "Study"
+					},
+					"survey": {
+						"label": "Survey"
+					},
+					"tinker": {
+						"label": "Tinker"
+					},
+					"mend": {
+						"label": "Mend"
+					},
+					"sway": {
+						"label": "Sway"
+					},
+					"channel": {
+						"label": "Channel"
+					},
+					"attune": {
+						"label": "Attune"
+					},
+					"command": {
+						"label": "Command"
+					},
+					"consort": {
+						"label": "Consort"
+					}
+				},
+				"tier": {
+					"label": "Tier"
+				},
+				"energy": {
+					"value": {
+						"label": "Energy"
+					},
+					"max": {
+						"label": "Capacity"
+					},
+					"efficiency": {
+						"label": "Efficiency",
+						"hint": "How little energy leaks when using a power."
+					}
+				},
+				"masteryBonus": {
+					"label": "Mastery Bonus"
+				},
+				"initiativeBonus": {
+					"label": "Initiative Bonus"
+				},
+				"powerUnderstanding": {
+					"label": "Power Understanding"
+				},
+				"identity": {
+					"age": {
+						"label": "Age"
+					},
+					"birthDate": {
+						"label": "Birth Date"
+					},
+					"biography": {
+						"label": "Biography"
+					},
+					"occupation": {
+						"label": "Occupation"
+					},
+					"faith": {
+						"label": "Faith"
+					},
+					"companyView": {
+						"label": "View of the Company"
+					},
+					"focus": {
+						"label": "Focus"
+					}
+				},
+				"background": {
+					"drive": {
+						"label": "Drive"
+					},
+					"ally": {
+						"label": "Ally"
+					},
+					"rival": {
+						"label": "Rival"
+					}
+				},
+				"burnoutScars": {
+					"label": "Burnout Scars"
+				},
+				"awakenings": {
+					"elements": {
+						"title": {
+							"label": "Title"
+						},
+						"description": {
+							"label": "Description"
+						}
+					}
+				},
+				"xp": {
+					"body": {
+						"label": "Body XP"
+					},
+					"agility": {
+						"label": "Agility XP"
+					},
+					"wits": {
+						"label": "Wits XP"
+					},
+					"spirit": {
+						"label": "Spirit XP"
+					},
+					"focus": {
+						"label": "Focus XP"
+					}
+				},
+				"load": {
+					"label": "Load"
+				},
+				"secretIdentity": {
+					"label": "Secret Identity"
+				},
+				"gmNotes": {
+					"label": "gmNotes"
+				},
+				"armor": {
+					"label": "armor"
+				},
+				"groupSize": {
+					"label": "Group Size"
+				},
+				"role": {
+					"label": "Role"
+				},
+				"attitude": {
+					"label": "Attitude"
+				},
+				"location": {
+					"label": "Location"
+				},
+				"tactics": {
+					"label": "Tactics"
+				},
+				"support": {
+					"value": {
+						"label": "Support"
+					},
+					"max": {
+						"label": "Support Needed"
+					}
+				},
+				"resources": {
+					"label": "Resources"
+				},
+				"heat": {
+					"label": "Heat"
+				},
+				"wanted": {
+					"label": "Wanted"
+				},
+				"base": {
+					"label": "Base"
+				},
+				"members": {
+					"label": "Members"
+				},
+				"contacts": {
+					"label": "Contacts"
+				},
+				"assets": {
+					"element": {
+						"name": {
+							"label": "Name"
+						},
+						"description": {
+							"label": "Description"
+						},
+						"used": {
+							"label": "used"
+						}
+					}
+				},
+				"relationships": {
+					"element": {
+						"faction": {
+							"label": "Faction"
+						},
+						"standing": {
+							"label": "Standing"
+						}
+					}
+				},
+				"upgrades": {
+					"label": "Upgrades"
+				}
+			}
+		},
+		"Item": {
+			"FIELDS": {
+				"description": {
+					"label": "Description"
+				},
+				"tier": {
+					"label": "Tier"
+				},
+				"load": {
+					"label": "Load"
+				},
+				"traits": {
+					"label": "Traits"
+				},
+				"carried": {
+					"label": "Carried"
+				},
+				"gearDice": {
+					"label": "Gear Dice"
+				},
+				"damage": {
+					"label": "Damage"
+				},
+				"range": {
+					"label": "Range"
+				},
+				"uses": {
+					"value": {
+						"label": "Uses Left"
+					},
+					"max": {
+						"label": "Max Uses"
+					}
+				},
+				"equipped": {
+					"label": "Equipped"
+				},
+				"ratting": {
+					"label": "Ratting"
+				},
+				"actions": {
+					"label": "Helps Actions"
+				},
+				"attribute": {
+					"label": "Attribute"
+				},
+				"severity": {
+					"label": "Severity"
+				},
+				"effect": {
+					"label": "Effect"
+				},
+				"lethal": {
+					"label": "Lethal"
+				},
+				"timeLimit": {
+					"label": "Time Limit"
+				},
+				"treated": {
+					"label": "Treated"
+				},
+				"haling": {
+					"value": {
+						"label": "Healing Progress"
+					},
+					"max": {
+						"label": "Healing Needed"
+					}
+				},
+				"permanent": {
+					"label": "Permanent"
+				}
+			}
 		}
 	}
 }

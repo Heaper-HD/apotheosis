@@ -1,0 +1,49 @@
+<section class="tab biography {{tab.cssClass}}" data-group="primary" data-tab="biography">
+	<div class="fields">
+		<label>
+			{{systemFields.identity.fields.age.label}}
+			<input type="number" name="system.identity.age" value="{{system.identity.age}}">
+		</label>
+		<label>
+			{{systemFields.identity.fields.birthDate.label}}
+			<input type="text" name="system.identity.birthDate" value="{{system.identity.birthDate}}">
+		</label>
+		<label>
+			{{systemFields.identity.fields.occupation.label}}
+			<input type="text" name="system.identity.occupation" value="{{system.identity.occupation}}">
+		</label>
+		<label>
+			{{systemFields.affiliation.label}}
+			<input type="text" name="system.affiliation" value="{{system.affiliation}}">
+		</label>
+		<label>
+			{{systemFields.identity.fields.faith.label}}
+			<input type="text" name="system.identity.faith" value="{{system.identity.faith}}">
+		</label>
+		<label>
+			{{systemFields.identity.fields.companyView.label}}
+			<input type="text" name="system.identity.companyView" value="{{system.identity.companyView}}">
+		</label>
+		<label>
+			{{systemFields.identity.fields.focus.label}}
+			<select name="system.identity.focus">
+				{{selectOptions config.focuses selected=system.identity.focus blank="-" localize=true}}
+			</select>
+		</label>
+		<label>
+			{{systemFields.background.fields.drive.label}}
+			<input type="text" name="system.background.drive" value="{{system.background.drive}}">
+		</label>
+		<label>
+			{{systemFields.background.fields.ally.label}}
+			<input type="text" name="system.background.ally" value="{{system.background.ally}}">
+		</label>
+		<label>
+			{{systemFields.background.fields.rival.label}}
+			<input type="text" name="system.background.rival" value="{{system.background.rival}}">
+		</label>
+	</div>
+
+	<h3>{{systemFields.identity.fields.biography.label}}</h3>
+	<textarea name="system.identity.biography">{{system.identity.biography}}</textarea>
+</section>

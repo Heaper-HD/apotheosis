@@ -1,0 +1,36 @@
+<aside class="sidebar">
+	<img class="portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}">
+	<input class="name" type="text" name="name" value="{{actor.name}}">
+
+	<div class="vitals">
+		{{#each vitals as |vital|}}
+			<div class="vital {{#if vital.broken}}broken{{/if}}">
+				<div class="vital-label">
+					<span>{{localize vital.label}}</span>
+					<span>{{vital.value}} / {{vital.max}} . {{vital.dice}}</span>
+				</div>
+				<div class="bar"><div class="fill" style="width: {{vital.percent}}%"></div></div>
+			</div>
+		{{/each}}
+
+		<div class="vital energy">
+			<div class="vital-label">
+				<span>{{systemFields.energy.fields.value.label}}</span>
+				<span>{{system.energy.value}} / {{system.energy.max}}</span>
+			</div>
+			<div class="bar"><div class="fill" style="width: {{energyPercent}}%"></div></div>
+		</div>
+
+		<div class="stats">
+			<span>{{systemFields.tier.label}} <strong>{{system.tier}}</strong></span>
+			<span>{{localize "APOTHEOSIS.Sidebar.Armor"}} <strong>{{system.armor}}</strong></span>
+			<span>{{localize "APOTHEOSIS.Sidebar.Cards"}} <strong>{{system.initiativeCards}}</strong></span>
+			<span>{{systemFields.burnoutScars.label}} <strong>{{system.burnoutScars}}</strong></span>
+		</div>
+	</div>
+
+	<div class="notes">
+		<h3>{{systemFields.notes.label}}</h3>
+		<textarea name="system.notes">{{system.notes}}</textarea>
+	</div>
+</aside>

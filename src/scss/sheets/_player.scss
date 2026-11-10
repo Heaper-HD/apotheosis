@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.apotheosis.sheet.player {
+	.biography {
+		.fields {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 8px var(--ap-gap);
+			margin-bottom: var(--ap-gap);
+
+			label { @include field-stacked; }
+			input, select { width: 100%; }
+		}
+
+		textarea { min-height: 14em; }
+	}
+}

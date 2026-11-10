@@ -70,4 +70,21 @@ export default class ApotheosisCharacterBase extends foundry.abstract.TypeDataMo
 
 		this.initiativeCards = 1 + Math.floor(this.attributes.agility.dice / agilityPerCard) + this.initiativeBonus;
 	}
+
+	async _preUpdate(changes, options, user) {
+		const allowed = await super._preUpdate(changes, options, user);
+		if (allowed === false) return false;
+
+		if (user.isGM) return;
+
+		const newActions = changes.system?.actions;
+		if (!newActions) return;
+
+		for (const[key, newValue] of Object.entries(newActions)) {
+			if (newValue < this.actions[key]) {
+				ui.notifications.warn(game.i18n.localize("APOTHEOSIS.Warning.ActionDecrease"));
+				return false;
+			}
+		}
+	}
 }

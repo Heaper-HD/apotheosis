@@ -1,4 +1,7 @@
 {
+	"Warning": {
+		"ActionDecrease": "Only the GM can lower an action."
+	},
 	"TYPES": {
 		"Actor": {
 			"civilian": "Civilian",

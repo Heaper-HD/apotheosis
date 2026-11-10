@@ -3,6 +3,8 @@ import { intField, attributeField, actionField, tierField } from '../_fields.mjs
 const { HTMLField, SchemaField, StringField } = foundry.data.fields;
 
 export default class ApotheosisCharacterBase extends foundry.abstract.TypeDataModel {
+	static LOCALIZATION_PREFIXES = ["APOTHEOSIS.Actor"];
+
 	static defineSchema() {
 		return {
 			affiliation: new StringField({ initial: "", blank: true }),

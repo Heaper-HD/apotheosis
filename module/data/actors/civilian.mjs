@@ -12,4 +12,16 @@ export default class ApotheosisCivilian extends ApotheosisNpcBase {
 			location: new StringField({ initial: "", blank: true })
 		}
 	}
+
+	async _preCreate(data, options, user) {
+		const allowed = await super._preCreate(data, options, user);
+		if (allowed === false) return false;
+
+		this.parent.updateSource({
+			prototypeToken: {
+				actorLink: false,
+				disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL
+			}
+		})
+	}
 }

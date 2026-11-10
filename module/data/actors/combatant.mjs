@@ -9,4 +9,16 @@ export default class ApotheosisCombatant extends ApotheosisNpcBase {
 			tactics: new StringField({ initial: "", blank: true })
 		}
 	}
+
+	async _preCreate(data, options, user) {
+		const allowed = await super._preCreate(data, options, user);
+		if (allowed === false) return false;
+
+		this.parent.updateSource({
+			prototypeToken: {
+				actorLink: false,
+				disposition: CONST.TOKEN_DISPOSITIONS.HOSTILE
+			}
+		})
+	}
 }

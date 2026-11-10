@@ -35,4 +35,16 @@ export default class ApotheosisPlayer extends ApotheosisHeroBase {
 			}
 		}
 	}
+
+	async _preCreate(data, options, user) {
+		const allowed = await super._preCreate(data, options, user);
+		if (allowed === false) return false;
+
+		this.parent.updateSource({
+			prototypeToken: {
+				actorLink: true,
+				disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY
+			}
+		})
+	}
 }

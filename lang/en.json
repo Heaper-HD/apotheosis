@@ -1,13 +1,45 @@
 {
-	"Warning": {
-		"ActionDecrease": "Only the GM can lower an action."
+	"APOTHEOSIS": {
+		"Warning": {
+			"ActionDecrease": "Only the GM can lower an action."
+		},
+		"Actor": {
+			"FIELDS": {
+				"affiliation": { "label": "Affiliation" },
+				"appearance": { "label": "Appearance" },
+				"notes": { "label": "Notes" },
+				"attributes": {
+					"body": {
+						"value": { "label": "Body" },
+						"max": { "label": "Max Body" }
+					}
+				},
+				"energy": {
+					"value": { "label": "Energy" },
+					"max": { "label": "Capacity" },
+					"efficiency": { "label": "Efficiency", "hint": "How little energy leaks when using a power." }
+				},
+				"xp": {
+					"body": { "label": "Body XP" }
+				},
+				"heat": { "label": "Heat" }
+			}
+		},
+		"Item": {
+			"FIELDS": {
+				"description": { "label": "Description" },
+				"tier": { "label": "Tier" },
+				"load": { "label": "Load" }
+			}
+		}
 	},
 	"TYPES": {
 		"Actor": {
 			"civilian": "Civilian",
 			"combatant": "Combatant",
 			"major": "Major",
-			"player": "Player"
+			"player": "Player",
+			"cell": "Cell"
 		},
 		"Item": {
 			"weapon": "Weapon",

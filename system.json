@@ -49,6 +49,8 @@
 		"distance": 5,
 		"units": "ft"
 	},
+	"primaryTokenAttribute": "attributes.body",
+	"secondaryTokenAttribute": "energy",
 	"documentTypes": {
 		"Actor": {
 			"civilian": { "htmlFields": ["notes"] },
@@ -67,6 +69,9 @@
 					"identity.biography",
 					"awakenings.*.description"
 				]
+			},
+			"cell": {
+				"htmlFields": ["notes"]
 			}
 		},
 		"Item": {

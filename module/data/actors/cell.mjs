@@ -3,6 +3,8 @@ import { intField } from './../_fields.mjs';
 const { StringField, ArrayField, SchemaField, DocumentUUIDField, BooleanField, HTMLField } = foundry.data.fields;
 
 export default class ApotheosisCell extends foundry.abstract.TypeDataModel {
+	static LOCALIZATION_PREFIXES = ["APOTHEOSIS.Cell"];
+
 	static defineSchema() {
 		return {
 			tier: intField({ max: 4, gmOnly: true }),

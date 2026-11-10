@@ -1,5 +1,5 @@
 import { APOTHEOSIS } from './helpers/config.mjs';
-import { ApotheosisCivilian, ApotheosisCombatant, ApotheosisMajor, ApotheosisPlayer } from './data/_module.mjs';
+import { ApotheosisCivilian, ApotheosisCombatant, ApotheosisMajor, ApotheosisPlayer, ApotheosisWeapon, ApotheosisArmor, ApotheosisGear, ApotheosisInjury } from './data/_module.mjs';
 import { registerSettings } from './settings.mjs';
 
 Hooks.once('init', function () {
@@ -7,12 +7,21 @@ Hooks.once('init', function () {
 
 	CONFIG.APOTHEOSIS = APOTHEOSIS;
 
-	registerDataModels();
+	registerActorDataModels();
+
+	registerItemDataModels();
 });
 
-function registerDataModels() {
+function registerActorDataModels() {
 	CONFIG.Actor.dataModels.civilian = ApotheosisCivilian;
 	CONFIG.Actor.dataModels.combatant = ApotheosisCombatant;
 	CONFIG.Actor.dataModels.major = ApotheosisMajor;
 	CONFIG.Actor.dataModels.player = ApotheosisPlayer;
+}
+
+function registerItemDataModels() {
+	CONFIG.Item.dataModels.weapon = ApotheosisWeapon;
+	CONFIG.Item.dataModels.armor = ApotheosisArmor;
+	CONFIG.Item.dataModels.gear = ApotheosisGear;
+	CONFIG.Item.dataModels.injury = ApotheosisInjury;
 }

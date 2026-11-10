@@ -1,5 +1,5 @@
 import ApotheosisNpcBase from './npc-base.mjs';
-import { tierField } from './_fields.mjs';
+import { tierField } from '../_fields.mjs';
 
 const { StringField } = foundry.data.fields;
 

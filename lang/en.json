@@ -5,6 +5,12 @@
 			"combatant": "Combatant",
 			"major": "Major",
 			"player": "Player"
+		},
+		"Item": {
+			"weapon": "Weapon",
+			"armor": "Armor",
+			"gear": "Gear",
+			"injury": "Injury"
 		}
 	}
 }

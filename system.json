@@ -51,18 +51,29 @@
 	},
 	"documentTypes": {
 		"Actor": {
-			"civilian": {
-				"htmlFields": ["notes"]
-			},
-			"combatant": {
-				"htmlFields": ["notes"]
-			},
+			"civilian": { "htmlFields": ["notes"] },
+			"combatant": { "htmlFields": ["notes"] },
 			"major": {
-				"htmlFields": ["notes", "identity.biography", "gmNotes", "awakenings.*.description"]
+				"htmlFields": [
+					"notes",
+					"identity.biography",
+					"gmNotes",
+					"awakenings.*.description"
+				]
 			},
 			"player": {
-				"htmlFields": ["notes", "identity.biography", "awakenings.*.description"]
+				"htmlFields": [
+					"notes",
+					"identity.biography",
+					"awakenings.*.description"
+				]
 			}
+		},
+		"Item": {
+			"weapon": { "htmlFields": ["description"] },
+			"armor": { "htmlFields": ["description"] },
+			"gear": { "htmlFields": ["description"] },
+			"injury": { "htmlFields": ["description"] }
 		}
 	}
 }

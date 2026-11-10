@@ -1,4 +1,4 @@
-import { intField, attributeField, actionField, tierField } from './_fields.mjs';
+import { intField, attributeField, actionField, tierField } from '../_fields.mjs';
 
 const { HTMLField, SchemaField, StringField } = foundry.data.fields;
 

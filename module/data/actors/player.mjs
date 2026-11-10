@@ -1,5 +1,5 @@
 import ApotheosisHeroBase from './hero-base.mjs';
-import { intField } from './_fields.mjs';
+import { intField } from '../_fields.mjs';
 
 const { SchemaField, StringField } = foundry.data.fields;
 

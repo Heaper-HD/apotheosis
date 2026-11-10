@@ -1,5 +1,5 @@
 import ApotheosisCharacterBase from './character-base.mjs';
-import { intField } from './_fields.mjs';
+import { intField } from '../_fields.mjs';
 
 const { HTMLField, SchemaField, ArrayField, StringField } = foundry.data.fields;
 

@@ -17,4 +17,22 @@ export default class ApotheosisPlayer extends ApotheosisHeroBase {
 			load: new StringField({ choices: ["light", "normal", "heavy"], initial: "normal" })
 		}
 	}
+
+	prepareDerivedData() {
+		super.prepareDerivedData();
+
+		const limits = {
+			light: game.settings.get("apotheosis", "loadLight"),
+			normal: game.settings.get("apotheosis", "loadNormal"),
+			heavy: game.settings.get("apotheosis", "loadHeavy")
+		};
+		this.loadLimit = limits[this.load];
+		this.loadCarried = 0;
+		for(const item of this.parent.items) {
+			if(item.system.carried) {
+				this.loadCarried += item.system.load;
+				this.overloaded = this.loadCarried > this.loadLimit;
+			}
+		}
+	}
 }

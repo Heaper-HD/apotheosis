@@ -28,4 +28,16 @@ export default class ApotheosisHeroBase extends ApotheosisCharacterBase {
 			}))
 		}
 	}
+
+	prepareDerivedData() {
+		super.prepareDerivedData();
+
+		this.armor = 0;
+		for(const item of this.parent.items) {
+			if (item.type === "armor" && item.system.equipped) {
+				this.armor = item.system.rating;
+				break;
+			}
+		}
+	}
 }

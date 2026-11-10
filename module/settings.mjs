@@ -34,4 +34,31 @@ export function registerSettings() {
 		type: Number,
 		default: 12
 	});
+
+	game.settings.register("apotheosis", "loadLight", {
+		name: "APOTHEOSIS.Settings.loadLight.name",
+		hint: "APOTHEOSIS.Settings.loadLight.hint",
+		scope: "world",
+		config: true,
+		type: Number,
+		default: 3
+	});
+
+	game.settings.register("apotheosis", "loadNormal", {
+		name: "APOTHEOSIS.Settings.loadNormal.name",
+		hint: "APOTHEOSIS.Settings.loadNormal.hint",
+		scope: "world",
+		config: true,
+		type: Number,
+		default: 5
+	});
+
+	game.settings.register("apotheosis", "loadHeavy", {
+		name: "APOTHEOSIS.Settings.loadHeavy.name",
+		hint: "APOTHEOSIS.Settings.loadHeavy.hint",
+		scope: "world",
+		config: true,
+		type: Number,
+		default: 7
+	});
 }

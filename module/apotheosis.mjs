@@ -1,7 +1,10 @@
 import { APOTHEOSIS } from './helpers/config.mjs';
 import { ApotheosisCivilian, ApotheosisCombatant, ApotheosisMajor, ApotheosisPlayer } from './data/_module.mjs';
+import { registerSettings } from './settings.mjs';
 
 Hooks.once('init', function () {
+	registerSettings();
+
 	CONFIG.APOTHEOSIS = APOTHEOSIS;
 
 	registerDataModels();

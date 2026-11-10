@@ -44,4 +44,30 @@ export default class ApotheosisCharacterBase extends foundry.abstract.TypeDataMo
 			powerUnderstanding: new StringField({ blank: true , gmOnly: true })
 		}
 	}
+
+	prepareDerivedData() {
+		super.prepareDerivedData();
+
+		const healthPerDie = game.settings.get("apotheosis", "healthPerDie");
+		const agilityPerCard = game.settings.get("apotheosis", "agilityPerCard");
+
+		for (const key of ["body", "agility", "wits"]) {
+			const attribute = this.attributes[key];
+
+			attribute.value = Math.clamp(attribute.value, 0, attribute.max);
+			attribute.rating = Math.ceil(attribute.max / healthPerDie);
+			attribute.dice = Math.ceil(attribute.value / healthPerDie);
+			attribute.broken = attribute.value === 0;
+			attribute.hurt = attribute.value <= attribute.max / 2;
+		}
+
+		const spirit = this.attributes.spirit;
+		spirit.dice = spirit.rating;
+
+		this.energy.value = Math.clamp(this.energy.value, 0, this.energy.max);
+		this.energy.multiplier = CONFIG.APOTHEOSIS.efficiencyMultipliers[this.energy.efficiency];
+		this.energy.mastery = Math.floor(spirit.rating / 2) + this.masteryBonus;
+
+		this.initiativeCards = 1 + Math.floor(this.attributes.agility.dice / agilityPerCard) + this.initiativeBonus;
+	}
 }

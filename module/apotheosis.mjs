@@ -1,4 +1,5 @@
 import { APOTHEOSIS } from './helpers/config.mjs';
+import { preloadTemplates } from './helpers/templates.mjs';
 import { ApotheosisCivilian, ApotheosisCombatant, ApotheosisMajor, ApotheosisPlayer, ApotheosisWeapon, ApotheosisArmor, ApotheosisGear, ApotheosisInjury } from './data/_module.mjs';
 import { ApotheosisPlayerSheet } from './sheets/_module.mjs'
 import { registerSettings } from './settings.mjs';
@@ -12,6 +13,7 @@ Hooks.once('init', function () {
 	registerItemDataModels();
 
 	registerSheets();
+	preloadTemplates();
 });
 
 function registerActorDataModels() {

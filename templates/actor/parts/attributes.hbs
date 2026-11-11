@@ -1,0 +1,40 @@
+<div class="attribute-cards">
+	<header class="panel-header">
+		<h3>{{localize "APOTHEOSIS.Panels.Attributes.Title"}}</h3>
+		<span class="panel-note">{{localize "APOTHEOSIS.Panels.Attributes.Note"}}</span>
+	</header>
+
+	{{#each attributeCards as |card|}}
+		<div class="attribute-card {{#if card.broken}}broken{{/if}}">
+			<header>
+				<h3>{{localize card.label}}</h3>
+				<span class="dice">{{card.dice}}</span>
+			</header>
+
+			{{#if card.health}}
+				<div class="health">
+					{{#each card.healthGroups as |group|}}
+						<div class="health-group">
+							{{#each group as |box|}}
+								<button type="button" class="box {{#if box.filled}}filled{{/if}}" data-action="setHealth" data-key="{{card.key}}" data-value="{{box.number}}"></button>
+							{{/each}}
+						</div>
+					{{/each}}
+				</div>
+			{{/if}}
+
+			<div class="actions">
+				{{#each card.actions as |action|}}
+					<div class="action-row {{action.key}}">
+						<span>{{localize action.label}}</span>
+						<div class="dots">
+							{{#each action.dots as |dot|}}
+								<button type="button" class="dot {{#if dot.filled}}filled{{/if}}" data-action="setAction" data-key="{{action.key}}" data-value="{{dot.value}}"></button>
+							{{/each}}
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/each}}
+</div>

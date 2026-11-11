@@ -1,3 +1,30 @@
-<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="main">
-  <h2>{{localize "APOTHEOSIS.Tabs.main"}}</h2>
+<section class="tab main {{tab.cssClass}}" data-group="primary" data-tab="main">
+	{{> "apotheosis.attributes"}}
+
+	<div class="energy-panel">
+		<header>
+			<h3>{{localize "APOTHEOSIS.Panels.Energy.Title"}}</h3>
+			<span class="energy-value">
+				<input type="number" name="system.energy.value" value="{{system.energy.value}}" min="0">
+				/ {{system.energy.max}}
+			</span>
+		</header>
+
+		<div class="bar large"><div class="fill" style="width: {{energyPercent}}%"></div></div>
+
+		<div class="stat-tiles">
+			<div class="stat-tile">
+				<span class="title-label">{{systemFields.energy.fields.efficiency.label}}</span>
+				<span class="title-value">{{system.energy.efficiency}}</span>
+			</div>
+			<div class="stat-tile">
+				<span class="title-label">{{localize "APOTHEOSIS.Panels.Energy.Waste"}}</span>
+				<span class="title-value">{{system.energy.multiplier}}</span>
+			</div>
+			<div class="stat-tile">
+				<span class="title-label">{{localize "APOTHEOSIS.Panels.Energy.Mastery"}}</span>
+				<span class="title-value">{{localize (lookup config.masteryLevels system.energy.mastery)}}</span>
+			</div>
+		</div>
+	</div>
 </section>

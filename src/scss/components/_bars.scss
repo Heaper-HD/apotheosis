@@ -25,3 +25,14 @@
 	&.broken .vital-label { color: var(--ap-danger); }
 	&.broken .bar { border-color: var(--ap-danger); }
 }
+
+.apotheosis .bar.large {
+	height: 14px;
+	background: var(--ap-paper);
+	border: 1px solid var(--ap-line);
+
+	.fill {
+		height: 100%;
+		background: var(--ap-energy);
+	}
+}

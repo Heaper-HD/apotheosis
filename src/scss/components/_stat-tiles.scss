@@ -1,0 +1,28 @@
+.apotheosis .stat-tiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+	gap: 8px;
+
+	.stat-tiles {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+		padding: 6px 8px;
+		background: var(--ap-paper);
+		border: 1px solid var(--ap-line);
+	}
+
+	.title-label {
+		font-size: 10px;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ap-muted);
+	}
+
+	.title-value {
+		font-family: var(--ap-font-data);
+		font-size: 18px;
+		font-weight: 800;
+	}
+}

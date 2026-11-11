@@ -6,13 +6,13 @@
 
 	.item {
 		padding: 8px 10px;
-		font-family: var(--ap-font-display);
+		font-family: var(--ap-font-family);
 		font-size: 15px;
 		text-transform: uppercase;
 		color: var(--ap-muted);
 		border-bottom: 2px solid transparent;
 
-		&:hover { color: var(--ap-ink); }
+		&:hover { color: var(--ap-link); }
 
 		&.active {
 			color: var(--ap-ink);

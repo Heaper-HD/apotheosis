@@ -94,6 +94,82 @@
   font-size: 16px;
 }
 
+.apotheosis .attribute-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ap-gap);
+  padding: var(--ap-gap);
+  margin-bottom: var(--ap-gap);
+  background: var(--ap-surface);
+  border: 1px solid var(--ap-line);
+  border-top: 3px solid var(--ap-ink);
+}
+.apotheosis .attribute-cards .panel-header {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.apotheosis .attribute-cards .panel-note {
+  font-size: 11px;
+  color: var(--ap-muted);
+}
+.apotheosis .attribute-cards .attribute-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--ap-paper);
+  border: 1px solid var(--ap-line);
+}
+.apotheosis .attribute-cards .attribute-card.broken {
+  border-top-color: var(--ap-danger);
+}
+.apotheosis .attribute-cards .attribute-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.apotheosis .attribute-cards .attribute-card .dice {
+  font-family: var(--ap-font-data);
+  font-weight: 700;
+}
+.apotheosis .attribute-cards .action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 2px 0;
+}
+.apotheosis .attribute-cards .action-row.channel {
+  color: var(--ap-spirit);
+  font-weight: 600;
+}
+
+.apotheosis .energy-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--ap-gap);
+  background: var(--ap-surface);
+  border: 1px solid var(--ap-line);
+  border-top: 3px solid var(--ap-energy);
+}
+.apotheosis .energy-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apotheosis .energy-panel header h3 {
+  color: var(--ap-energy);
+}
+.apotheosis .energy-panel .energy-value {
+  font-family: var(--ap-font-data);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .apotheosis .vital {
   display: flex;
   flex-direction: column;
@@ -124,6 +200,93 @@
   border-color: var(--ap-danger);
 }
 
+.apotheosis .bar.large {
+  height: 14px;
+  background: var(--ap-paper);
+  border: 1px solid var(--ap-line);
+}
+.apotheosis .bar.large .fill {
+  height: 100%;
+  background: var(--ap-energy);
+}
+
+.apotheosis .health {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.apotheosis .health .health-group {
+  display: flex;
+  gap: 2px;
+}
+.apotheosis .health .box {
+  width: 14px;
+  height: 14px;
+  min-height: 0;
+  padding: 0;
+  flex: none;
+  border: 1px solid var(--ap-ink);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+.apotheosis .health .box.filled {
+  background: var(--ap-ink);
+}
+.apotheosis .health .box:hover {
+  border-color: var(--ap-spirit);
+}
+
+.apotheosis .dots {
+  display: flex;
+  gap: 4px;
+}
+.apotheosis .dots .dot {
+  width: 12px;
+  height: 12px;
+  min-height: 0;
+  padding: 0;
+  flex: none;
+  border: 1px solid var(--ap-ink);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+.apotheosis .dots .dot.filled {
+  background: var(--ap-ink);
+}
+.apotheosis .dots .dot:hover {
+  border-color: var(--ap-spirit);
+}
+
+.apotheosis .stat-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+}
+.apotheosis .stat-tiles .stat-tiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--ap-paper);
+  border: 1px solid var(--ap-line);
+}
+.apotheosis .stat-tiles .title-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ap-muted);
+}
+.apotheosis .stat-tiles .title-value {
+  font-family: var(--ap-font-data);
+  font-size: 18px;
+  font-weight: 800;
+}
+
 .apotheosis nav.tabs {
   display: flex;
   gap: 4px;
@@ -132,14 +295,14 @@
 }
 .apotheosis nav.tabs .item {
   padding: 8px 10px;
-  font-family: var(--ap-font-display);
+  font-family: var(--ap-font-family);
   font-size: 15px;
   text-transform: uppercase;
   color: var(--ap-muted);
   border-bottom: 2px solid transparent;
 }
 .apotheosis nav.tabs .item:hover {
-  color: var(--ap-ink);
+  color: var(--ap-link);
 }
 .apotheosis nav.tabs .item.active {
   color: var(--ap-ink);

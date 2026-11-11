@@ -1,0 +1,23 @@
+.apotheosis .health {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+
+	.health-group { display: flex; gap: 2px; }
+
+	.box {
+		width: 14px;
+		height: 14px;
+		min-height: 0;
+		padding: 0;
+		flex: none;
+		border: 1px solid var(--ap-ink);
+		border-radius: 0;
+		background: transparent;
+		box-shadow: none;
+		cursor: pointer;
+
+		&.filled { background: var(--ap-ink); }
+		&:hover { border-color: var(--ap-spirit); }
+	}
+}

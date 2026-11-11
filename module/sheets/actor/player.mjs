@@ -6,7 +6,11 @@ export default class ApotheosisPlayerSheet extends HandlebarsApplicationMixin(Ac
 		classes: [ "apotheosis", "sheet", "actor", "player", "sidebar-sheet" ],
 		position: {	width: 700, height: 750 },
 		window: { resizable: true },
-		form: { submitOnChange: true, closeOnSubmit: false }
+		form: { submitOnChange: true, closeOnSubmit: false },
+		actions: {
+			setAction: ApotheosisPlayerSheet.#onSetAction,
+			setHealth: ApotheosisPlayerSheet.#onSetHealth
+		}
 	};
 
 	static PARTS = {
@@ -55,6 +59,44 @@ export default class ApotheosisPlayerSheet extends HandlebarsApplicationMixin(Ac
 			};
 		});
 
+		const healthPerDie = game.settings.get("apotheosis", "healthPerDie");
+
+		context.attributeCards = Object.entries(CONFIG.APOTHEOSIS.attributes).map(([key, config]) => {
+			const attribute = system.attributes[key];
+
+			let healthGroups = [];
+			if (config.health) {
+				const boxes = Array.from({ length: attribute.max }, (_, i) => ({
+					number: i + 1,
+					filled: i + 1 <= attribute.value
+				}));
+				for (let i = 0; i < boxes.length; i += healthPerDie) {
+					healthGroups.push(boxes.slice(i, i + healthPerDie));
+				}
+			}
+
+			const actions = Object.entries(CONFIG.APOTHEOSIS.actions)
+				.filter(([, action]) => action.attribute === key)
+				.map(([actionKey, action]) => {
+					const rating = system.actions[actionKey];
+					return {
+						key: actionKey,
+						label: action.label,
+						dots: [1, 2, 3, 4].map(n => ({ value: n, filled: n <= rating }))
+					};
+				});
+
+				return {
+					key,
+					label: config.label,
+					dice: attribute.dice,
+					health: config.health,
+					broken: attribute.broken,
+					healthGroups,
+					actions
+				};
+		})
+
 		context.energyPercent = system.energy.max
 			? Math.round((system.energy.value / system.energy.max) * 100)
 			: 0;
@@ -66,5 +108,23 @@ export default class ApotheosisPlayerSheet extends HandlebarsApplicationMixin(Ac
 		context = await super._preparePartContext(partId, context);
 		context.tab = context.tabs[partId];
 		return context;
+	}
+
+	static async #onSetAction(event, target) {
+		if (!this.isEditable) return;
+		const key = target.dataset.key;
+		const value = Number(target.dataset.value);
+		const current = this.actor.system.actions[key];
+		const newValue = current === value ? value - 1 : value;
+		await this.actor.update({ [`system.actions.${key}`]: newValue });
+	}
+
+	static async #onSetHealth(event, target) {
+		if (!this.isEditable) return;
+		const key = target.dataset.key;
+		const value = Number(target.dataset.value);
+		const current = this.actor.system.attributes[key].value;
+		const newValue = current === value ? value - 1 : value;
+		await this.actor.update({ [`system.attributes.${key}.value`]: newValue });
 	}
 }

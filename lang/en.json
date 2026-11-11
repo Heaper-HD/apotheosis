@@ -80,6 +80,17 @@
 			"Sympathetic": "Sympathetic",
 			"Ally": "Ally"
 		},
+		"Panels": {
+			"Energy": {
+				"Title": "Spiritual Energy",
+				"Waste": "Waste",
+				"Mastery": "Mastery"
+			},
+			"Attributes": {
+				"Title": "Attribute & Actions",
+				"Note": "Roll attribute dice + action dots + gear"
+			}
+		},
 		"Setting": {
 			"healthPerDie": {
 				"name": "Health per die",
